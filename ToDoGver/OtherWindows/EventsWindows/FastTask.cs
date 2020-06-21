@@ -14,7 +14,7 @@ namespace ToDoGver.OtherWindows.EventsWindows
         private int id = 0;
 
         // Path to the data task file
-        string filePath = @"E:\Project\C#\GverReminder\ToDoGver\ToDoGver\Data\OneTimeEvent.txt";
+        string filePath = @"E:\Project\C#\GverReminder\ToDoGver\GverReminder\ToDoGver\Data\OneTimeEvent.txt";
         
         // List to store task to save to the file
         public List<OneTimeEvent> ListOneTimeEvents = new List<OneTimeEvent>();
