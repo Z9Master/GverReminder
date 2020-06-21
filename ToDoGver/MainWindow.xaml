@@ -1,0 +1,153 @@
+﻿<Window x:Class="ToDoGver.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ToDoGver"
+        mc:Ignorable="d"
+        Title="To-Do" Height="600" Width="900" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="Pictures/Icon.jpg" Loaded="Window_Loaded">
+    <!--Main Grid-->
+    
+    <Grid>
+        <TabControl TabStripPlacement="Bottom" Padding="0">
+            <TabItem Header="Home">
+                <Grid Background="White">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <!--#region Column0 Calendar_FTask-->
+                    <Grid Grid.Column="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50*"></RowDefinition>
+                            <RowDefinition Height="5*"></RowDefinition>
+                            <RowDefinition Height="40*"></RowDefinition>
+                            <RowDefinition Height="5*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <!--#region Calendar-->
+                        <Grid Grid.Row="0" Background="#FFE4EAF0">
+                            <Calendar>
+                                <Calendar.Style>
+                                    <Style TargetType="{x:Type Calendar}">
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="{x:Type Calendar}">
+                                                    <Viewbox    Height="272"
+                                                                Width="300">
+                                                        <CalendarItem x:Name="PART_CalendarItem"
+                                                                      Background="{TemplateBinding Background}"/>
+                                                    </Viewbox>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </Calendar.Style>
+                            </Calendar>
+                        </Grid>
+                        <!--#endregion-->
+                        <!--#region Fast Task-->
+                        <Grid Grid.Row="1" Background="#FFE8EDF2">
+                            <Label Padding="6,2,0,0" FontSize="20" FontFamily="Bahnschrift Light">One time task</Label>
+                        </Grid>
+                        <Grid Grid.Row="2" Background="#FFE8EDF2">
+
+                            <ListBox x:Name="LB_OneTimeEvent" BorderBrush="{x:Null}" Background="{x:Null}">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <CheckBox FontSize="15" FontFamily="Bahnschrift Light" Content="{Binding nameEvent, UpdateSourceTrigger=LostFocus}" Tag="{Binding IdEvent}" Checked="CheckBox_Checked"></CheckBox>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+                        </Grid>
+                        <Grid Grid.Row="3" Background="#FFE8EDF2">
+                            <TextBox x:Name="TB_OnetimeTaskName" Width="258" HorizontalAlignment="Left" BorderBrush="#FFDADADA" Background="#FFE0E5EA" SelectionBrush="#FF767676"></TextBox>
+                            <Button  Width="40" HorizontalAlignment="Right" Content="+" x:Name="BtnAddFtask"  BorderBrush="#FFDADADA" Background="#FFC8E6E7" Click="BtnAddFtask_Click" FontSize="24" FontFamily="Bahnschrift Light" Foreground="#FF606060"></Button>
+                        </Grid>
+                        <!--#endregion-->
+                    </Grid>
+                    <!--#endregion-->
+                    <!--#region Column1 Player_Task-->
+                    <Grid Grid.Column="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"></RowDefinition>
+                            <RowDefinition Height="10*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <!--#region User-->
+                        <Grid Grid.Row="0" Background="#FFBDE4FF" >
+                            <Canvas>
+                                <Canvas.Resources>
+                                    <Style x:Key="LabelStyle" TargetType="Label">
+                                        <Setter Property="FontFamily" Value="Bahnschrift Light"></Setter>
+                                    </Style>
+                                    <Style x:Key="IconStyle" TargetType="Image">
+                                        <Setter Property="Width" Value="18"></Setter>
+                                        <Setter Property="Height" Value="18"></Setter>
+                                    </Style>
+                                </Canvas.Resources>
+                                <Image Width="46" Height="46" Canvas.Left="2" Canvas.Top="2" Source="Pictures/Icon.jpg"></Image>
+                                
+                                <Image Style="{StaticResource IconStyle}" Canvas.Left="52" Canvas.Top="5" Source="Pictures/HP.png"  ></Image>
+                                <ProgressBar x:Name="PBar_HP" Canvas.Left="75" Canvas.Top="6" Width="250" Height="14" BorderBrush="#FFFFC4C4" Background="#FFFFC4C4" Foreground="#FFFF3030" Value="30"></ProgressBar>
+                                <Label Style="{StaticResource LabelStyle}" Content="N/A" Canvas.Left="325" Canvas.Top="2"></Label>
+
+                                <Image Style="{StaticResource IconStyle}" Canvas.Left="52" Canvas.Top="27" Source="Pictures/MB.png"  ></Image>
+                                <ProgressBar x:Name="PBar_MB" Canvas.Left="75" Canvas.Top="29" Width="250" Height="14" BorderBrush="#FFA6B7FF" Background="#FFA6B7FF" Foreground="#FF5B86FF" Value="30"></ProgressBar>
+                                <Label Style="{StaticResource LabelStyle}" Content="N/A" Canvas.Left="325" Canvas.Top="25"></Label>
+
+                                <Image Style="{StaticResource IconStyle}" Canvas.Left="460" Canvas.Top="5" Source="Pictures/Coin.png"></Image>
+                                <Label Style="{StaticResource LabelStyle}" Content="N/A" Canvas.Left="480" Canvas.Top="2"></Label>
+                                <Image Style="{StaticResource IconStyle}" Canvas.Left="460" Canvas.Top="27" Source="Pictures/Diamond.png"></Image>
+                                <Label Style="{StaticResource LabelStyle}" Content="N/A" Canvas.Left="480" Canvas.Top="25"></Label>
+                            </Canvas>
+                        </Grid>
+                        <!--#endregion-->
+                    </Grid>
+                    <!--#endregion-->
+                </Grid>
+            </TabItem>
+            <TabItem Header="All task">
+                <Grid Background="White"/>
+            </TabItem>
+            <TabItem Header="Shop">
+                <Grid Background="White"/>
+            </TabItem>
+            <TabItem Header="Inventory">
+                <Grid Background="White"/>
+            </TabItem>
+            <TabItem Header="Setting">
+                <Grid Background="White"/>
+            </TabItem>
+            <TabItem Header="Items setting">
+                <Grid Background="White"/>
+            </TabItem>
+        </TabControl>
+    </Grid>
+    <!-- Old code
+    ====================================================== Fast task + subtask
+    <ListBox x:Name="LB_OneTimeEvent">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <CheckBox Margin="0,3,0,0" Checked="CheckBox_Checked"></CheckBox>
+                                            <TreeView BorderBrush="{x:Null}">
+                                                <TreeViewItem Header="{Binding event_name}" IsExpanded="True">
+                                                    <ListBox x:Name="LB_OneTimeEventSubEvent" ItemsSource="{Binding list_subevent}" BorderBrush="{x:Null}">
+                                                        <ListBox.ItemTemplate>
+                                                            <DataTemplate>
+                                                                <CheckBox Content="{Binding sub_event}"></CheckBox>
+                                                            </DataTemplate>
+                                                        </ListBox.ItemTemplate>
+                                                    </ListBox>
+                                                </TreeViewItem>
+                                            </TreeView>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+    -->
+</Window>
+    
+    
+    

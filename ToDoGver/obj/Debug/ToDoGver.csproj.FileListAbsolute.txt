@@ -1,0 +1,34 @@
+C:\Users\tonik\Desktop\Project\Csharp\Reminder 1\ToDoGver\ToDoGver\bin\Debug\ToDoGver.exe.config
+C:\Users\tonik\Desktop\Project\Csharp\Reminder 1\ToDoGver\ToDoGver\bin\Debug\ToDoGver.exe
+C:\Users\tonik\Desktop\Project\Csharp\Reminder 1\ToDoGver\ToDoGver\bin\Debug\ToDoGver.pdb
+C:\Users\tonik\Desktop\Project\Csharp\Reminder 1\ToDoGver\ToDoGver\obj\Debug\ToDoGver.csprojAssemblyReference.cache
+C:\Users\tonik\Desktop\Project\Csharp\Reminder 1\ToDoGver\ToDoGver\obj\Debug\MainWindow.g.cs
+C:\Users\tonik\Desktop\Project\Csharp\Reminder 1\ToDoGver\ToDoGver\obj\Debug\App.g.cs
+C:\Users\tonik\Desktop\Project\Csharp\Reminder 1\ToDoGver\ToDoGver\obj\Debug\ToDoGver_MarkupCompile.cache
+C:\Users\tonik\Desktop\Project\Csharp\Reminder 1\ToDoGver\ToDoGver\obj\Debug\ToDoGver_MarkupCompile.lref
+C:\Users\tonik\Desktop\Project\Csharp\Reminder 1\ToDoGver\ToDoGver\obj\Debug\MainWindow.baml
+C:\Users\tonik\Desktop\Project\Csharp\Reminder 1\ToDoGver\ToDoGver\obj\Debug\ToDoGver.g.resources
+C:\Users\tonik\Desktop\Project\Csharp\Reminder 1\ToDoGver\ToDoGver\obj\Debug\ToDoGver.Properties.Resources.resources
+C:\Users\tonik\Desktop\Project\Csharp\Reminder 1\ToDoGver\ToDoGver\obj\Debug\ToDoGver.csproj.GenerateResource.cache
+C:\Users\tonik\Desktop\Project\Csharp\Reminder 1\ToDoGver\ToDoGver\obj\Debug\ToDoGver.csproj.CoreCompileInputs.cache
+C:\Users\tonik\Desktop\Project\Csharp\Reminder 1\ToDoGver\ToDoGver\obj\Debug\ToDoGver.exe
+C:\Users\tonik\Desktop\Project\Csharp\Reminder 1\ToDoGver\ToDoGver\obj\Debug\ToDoGver.pdb
+C:\Users\tonik\Desktop\Project\Csharp\Reminder 1\ToDoGver\ToDoGver\obj\Debug\OtherWindows\EventsWindows\AddOneTimeEvent.g.cs
+C:\Users\tonik\Desktop\Project\Csharp\Reminder 1\ToDoGver\ToDoGver\obj\Debug\OtherWindows\EventsWindows\AddOneTimeEvent.baml
+E:\Project\C#\GverReminder\ToDoGver\ToDoGver\bin\Debug\ToDoGver.exe.config
+E:\Project\C#\GverReminder\ToDoGver\ToDoGver\bin\Debug\ToDoGver.exe
+E:\Project\C#\GverReminder\ToDoGver\ToDoGver\bin\Debug\ToDoGver.pdb
+E:\Project\C#\GverReminder\ToDoGver\ToDoGver\obj\Debug\ToDoGver.csprojAssemblyReference.cache
+E:\Project\C#\GverReminder\ToDoGver\ToDoGver\obj\Debug\MainWindow.g.cs
+E:\Project\C#\GverReminder\ToDoGver\ToDoGver\obj\Debug\OtherWindows\EventsWindows\AddOneTimeEvent.g.cs
+E:\Project\C#\GverReminder\ToDoGver\ToDoGver\obj\Debug\App.g.cs
+E:\Project\C#\GverReminder\ToDoGver\ToDoGver\obj\Debug\ToDoGver_MarkupCompile.cache
+E:\Project\C#\GverReminder\ToDoGver\ToDoGver\obj\Debug\ToDoGver_MarkupCompile.lref
+E:\Project\C#\GverReminder\ToDoGver\ToDoGver\obj\Debug\MainWindow.baml
+E:\Project\C#\GverReminder\ToDoGver\ToDoGver\obj\Debug\OtherWindows\EventsWindows\AddOneTimeEvent.baml
+E:\Project\C#\GverReminder\ToDoGver\ToDoGver\obj\Debug\ToDoGver.g.resources
+E:\Project\C#\GverReminder\ToDoGver\ToDoGver\obj\Debug\ToDoGver.Properties.Resources.resources
+E:\Project\C#\GverReminder\ToDoGver\ToDoGver\obj\Debug\ToDoGver.csproj.GenerateResource.cache
+E:\Project\C#\GverReminder\ToDoGver\ToDoGver\obj\Debug\ToDoGver.csproj.CoreCompileInputs.cache
+E:\Project\C#\GverReminder\ToDoGver\ToDoGver\obj\Debug\ToDoGver.exe
+E:\Project\C#\GverReminder\ToDoGver\ToDoGver\obj\Debug\ToDoGver.pdb
