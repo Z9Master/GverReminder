@@ -55,7 +55,13 @@
                                 <ListBox.ItemTemplate>
                                     <DataTemplate>
                                         <StackPanel Orientation="Horizontal">
-                                            <CheckBox FontSize="15" FontFamily="Bahnschrift Light" Content="{Binding nameEvent, UpdateSourceTrigger=LostFocus}" Tag="{Binding IdEvent}" Checked="CheckBox_Checked"></CheckBox>
+                                            <CheckBox FontSize="15" FontFamily="Bahnschrift Light" Content="{Binding nameEvent, UpdateSourceTrigger=LostFocus}" Tag="{Binding IdEvent}" Checked="CheckBox_Checked" MouseRightButtonDown="CheckBoxOTE_RightClick">
+                                                <CheckBox.ContextMenu>
+                                                    <ContextMenu>
+                                                        <MenuItem Header="Remove" Click="CB_Item_RightCLick" />
+                                                    </ContextMenu>
+                                                </CheckBox.ContextMenu>
+                                            </CheckBox>
                                         </StackPanel>
                                     </DataTemplate>
                                 </ListBox.ItemTemplate>
@@ -97,9 +103,9 @@
                                 <Label Style="{StaticResource LabelStyle}" Content="N/A" Canvas.Left="325" Canvas.Top="25"></Label>
 
                                 <Image Style="{StaticResource IconStyle}" Canvas.Left="460" Canvas.Top="5" Source="Pictures/Coin.png"></Image>
-                                <Label Style="{StaticResource LabelStyle}" Content="N/A" Canvas.Left="480" Canvas.Top="2"></Label>
+                                <Label Style="{StaticResource LabelStyle}" Content="N/A" Canvas.Left="480" Canvas.Top="2" Name="label_gold"></Label>
                                 <Image Style="{StaticResource IconStyle}" Canvas.Left="460" Canvas.Top="27" Source="Pictures/Diamond.png"></Image>
-                                <Label Style="{StaticResource LabelStyle}" Content="N/A" Canvas.Left="480" Canvas.Top="25"></Label>
+                                <Label Style="{StaticResource LabelStyle}" Content="N/A" Canvas.Left="480" Canvas.Top="25" Name="label_diamond"></Label>
                             </Canvas>
                         </Grid>
                         <!--#endregion-->

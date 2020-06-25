@@ -19,11 +19,9 @@ namespace ToDoGver.OtherWindows.EventsWindows
         // List to store task to save to the file
         public List<OneTimeEvent> ListOneTimeEvents = new List<OneTimeEvent>();
 
-        public 
-        
         // The list to load file text to parse to the ListOneTimeEvents
-        List<string> lines;
-        
+        public List<string> lines;
+
         // Simple load file from filePath
         public void LoadFile()
         {
@@ -42,7 +40,7 @@ namespace ToDoGver.OtherWindows.EventsWindows
             }
             catch
             {
-                MessageBox.Show("Can´t load file");
+                MessageBox.Show("Can´t load One time events file");
             }
         }
 

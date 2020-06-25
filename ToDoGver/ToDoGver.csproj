@@ -73,6 +73,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="OtherClasses\UserData.cs" />
     <Compile Include="OtherWindows\EventsWindows\AddOneTimeEvent.xaml.cs">
       <DependentUpon>AddOneTimeEvent.xaml</DependentUpon>
     </Compile>
