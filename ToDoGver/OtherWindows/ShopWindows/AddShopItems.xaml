@@ -1,0 +1,33 @@
+﻿<Window x:Class="ToDoGver.OtherWindows.ShopWindows.AddShopItems"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ToDoGver.OtherWindows.ShopWindows"
+        mc:Ignorable="d"
+        Title="AddShopItems" Height="300" Width="500" ResizeMode="NoResize" Icon="/ToDoGver;component/Pictures/Icon.jpg" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
+    <Grid>
+        <Canvas>
+            <Label Canvas.Left="5">Item name</Label>
+            <Label Canvas.Left="5" Canvas.Top="25">Price in golds</Label>
+            <Label Canvas.Left="5" Canvas.Top="50">Price in diamonds</Label>
+            <Label Canvas.Left="5" Canvas.Top="75">Stock</Label>
+            <Label Canvas.Left="5" Canvas.Top="100">Hp recover</Label>
+            <Label Canvas.Left="5" Canvas.Top="125">Mb recover</Label>
+            <Label Canvas.Left="5" Canvas.Top="150">Picture location</Label>
+            <Label Canvas.Left="5" Canvas.Top="175">Describtion</Label>
+            <TextBox Canvas.Top="4" x:Name="TB_ItemName" Canvas.Left="180" Width="300" Height="20"></TextBox>
+            <TextBox Canvas.Top="29" x:Name="TB_PriceGold" Canvas.Left="180" Width="300" Height="20"></TextBox>
+            <TextBox Canvas.Top="54" x:Name="TB_PriceDia" Canvas.Left="180" Width="300" Height="20"></TextBox>
+            <TextBox Canvas.Top="79" x:Name="TB_ItemStock" Canvas.Left="180" Width="300" Height="20"></TextBox>
+            <TextBox Canvas.Top="104" x:Name="TB_HpRecover" Canvas.Left="180" Width="300" Height="20"></TextBox>
+            <TextBox Canvas.Top="129" x:Name="TB_MbRecover" Canvas.Left="180" Width="300" Height="20"></TextBox>
+
+            <Button Canvas.Top="154" Canvas.Left="180" Height="20" Width="100" Click="Button_Click">Browse</Button>
+            <TextBox Canvas.Top="179" x:Name="TB_ItemDescribtion" TextWrapping="Wrap" Canvas.Left="180" Width="300" Height="50"></TextBox>
+            <Button Canvas.Bottom="5" Canvas.Right="14" Width="75" Height="20" Click="Button_Click_1">OK</Button>
+            <Button Canvas.Bottom="5" Canvas.Right="94" Width="75" Height="20">Cancel</Button>
+            <Label Canvas.Bottom="0">Text can´t contains ; </Label>
+        </Canvas> 
+    </Grid>
+</Window>

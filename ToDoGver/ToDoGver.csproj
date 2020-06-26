@@ -71,13 +71,21 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="OtherWindows\ShopWindows\AddShopItems.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="OtherClasses\Shop.cs" />
     <Compile Include="OtherClasses\UserData.cs" />
     <Compile Include="OtherWindows\EventsWindows\AddOneTimeEvent.xaml.cs">
       <DependentUpon>AddOneTimeEvent.xaml</DependentUpon>
     </Compile>
     <Compile Include="OtherWindows\EventsWindows\FastTask.cs" />
+    <Compile Include="OtherWindows\ShopWindows\AddShopItems.xaml.cs">
+      <DependentUpon>AddShopItems.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -122,6 +130,27 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pictures\Shop\Btn\AddIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pictures\Shop\Btn\Add2Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pictures\Shop\Btn\BinIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pictures\Shop\Btn\Bin2Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pictures\Shop\Btn\pencilIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pictures\Shop\Items\HPLIcon.png" />
+    <Resource Include="Pictures\Shop\Items\HPSIcon.png" />
+    <Resource Include="Pictures\Shop\Items\ManaLIron.png" />
+    <Resource Include="Pictures\Shop\Items\ManaSIcon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

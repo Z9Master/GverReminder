@@ -2,5 +2,5 @@
 1,mb,100
 4,OTE_gold,20
 5,OTE_dia,2
-2,gold,1020
-3,dia,6
+2,gold,1060
+3,dia,10

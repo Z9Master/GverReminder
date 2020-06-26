@@ -49,3 +49,5 @@ E:\Project\C#\GverReminder\ToDoGver\GverReminder\ToDoGver\obj\Debug\ToDoGver.csp
 E:\Project\C#\GverReminder\ToDoGver\GverReminder\ToDoGver\obj\Debug\ToDoGver.csproj.CoreCompileInputs.cache
 E:\Project\C#\GverReminder\ToDoGver\GverReminder\ToDoGver\obj\Debug\ToDoGver.exe
 E:\Project\C#\GverReminder\ToDoGver\GverReminder\ToDoGver\obj\Debug\ToDoGver.pdb
+E:\Project\C#\GverReminder\ToDoGver\GverReminder\ToDoGver\obj\Debug\OtherWindows\ShopWindows\AddShopItems.g.cs
+E:\Project\C#\GverReminder\ToDoGver\GverReminder\ToDoGver\obj\Debug\OtherWindows\ShopWindows\AddShopItems.baml

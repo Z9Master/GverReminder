@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ToDoGver.OtherClasses;
 using ToDoGver.OtherWindows.EventsWindows;
+using ToDoGver.OtherWindows.ShopWindows;
 
 namespace ToDoGver
 {
@@ -24,6 +25,8 @@ namespace ToDoGver
     {
         FastTask ft = new FastTask();
         UserData ud = new UserData();
+        Shop sp = new Shop();
+        
 
         // We need this to save OTE item id for remove
         int checkboxOTEid;
@@ -41,6 +44,29 @@ namespace ToDoGver
             label_gold.Content = ud.Gold.ToString();
             label_diamond.Content = ud.Dia.ToString();
         }
+
+        #region Shop functions
+        // This loads data like price, stock, etc
+        private void GetItemdatas(int tag)
+        {
+            try
+            {
+                BitmapImage ImageCache = new BitmapImage();
+                ImageCache.BeginInit();
+                ImageCache.UriSource = new Uri(sp.findImageSource(tag));
+                ImageCache.EndInit();
+                ShopImageBig.Source = ImageCache;
+                label_GoldPrice.Content = sp.findGoldPrice(tag);
+                label_DiaPrice.Content = sp.findDiaPrice(tag);
+                TB_ShopItemDescribtion.Text = sp.findDescribtion(tag);
+                label_itemStock.Content = sp.findIteminStock(tag);
+            }
+            catch
+            {
+
+            }
+        }
+        #endregion
 
         #region OTE_Functions
         void AddFastTask()
@@ -123,15 +149,48 @@ namespace ToDoGver
         }
         #endregion
 
+        #region Shop events
+        private void StackPanel_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            StackPanel tagSpanel = sender as StackPanel;
+            //MessageBox.Show(tagSpanel.Tag.ToString());
+            int tag = Int32.Parse(tagSpanel.Tag.ToString());
+            GetItemdatas(tag);
+        }
+        #endregion
+
         #region Other events
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             ft.LoadFile();
             LB_OneTimeEvent.ItemsSource = ft.ListOneTimeEvents;
+            LB_ShopItems.ItemsSource = sp.ListShopItems;
         }
 
+
+
+
+
         #endregion
+
         #endregion
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            AddShopItems ASI = new AddShopItems();
+            ASI.Show();
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            System.Windows.Application.Current.Shutdown();
+        }
+
+        public void ReloadShop()
+        {
+            
+            LB_ShopItems.Items.Refresh();
+        }
     }
 }
 

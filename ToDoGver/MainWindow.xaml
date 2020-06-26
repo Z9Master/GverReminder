@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ToDoGver"
         mc:Ignorable="d"
-        Title="To-Do" Height="600" Width="900" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="Pictures/Icon.jpg" Loaded="Window_Loaded">
+        Title="To-Do" Height="600" Width="900" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="Pictures/Icon.jpg" Loaded="Window_Loaded" Closing="Window_Closing">
     <!--Main Grid-->
     
     <Grid>
@@ -59,6 +59,7 @@
                                                 <CheckBox.ContextMenu>
                                                     <ContextMenu>
                                                         <MenuItem Header="Remove" Click="CB_Item_RightCLick" />
+                                                        <MenuItem Header="Failed"/>
                                                     </ContextMenu>
                                                 </CheckBox.ContextMenu>
                                             </CheckBox>
@@ -117,15 +118,86 @@
                 <Grid Background="White"/>
             </TabItem>
             <TabItem Header="Shop">
-                <Grid Background="White"/>
-            </TabItem>
-            <TabItem Header="Inventory">
-                <Grid Background="White"/>
+                <Grid Background="white">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="7*"></ColumnDefinition>
+                        <ColumnDefinition Width="10*"></ColumnDefinition>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="2">
+                        <Canvas Background="WhiteSmoke">
+                            <Canvas.Resources>
+                                <Style x:Key="ShopControlBtnStyle" TargetType="Button">
+                                    <Setter Property="BorderThickness" Value="1"></Setter>
+                                    <Setter Property="BorderBrush" Value="WhiteSmoke"></Setter>
+
+                                </Style>
+                            </Canvas.Resources>
+                            <Button Width="50" Height="50" Style="{StaticResource ShopControlBtnStyle}" Canvas.Top="0" Canvas.Left="0" Click="Button_Click">
+                                <StackPanel>
+                                    <Image Source="Pictures/Shop/Btn/Add2Icon.png" Stretch="UniformToFill"></Image>
+                                </StackPanel>
+                            </Button>
+                            <Button Width="50" Height="50" Style="{StaticResource ShopControlBtnStyle}" Canvas.Top="50" Canvas.Left="0">
+                                <StackPanel>
+                                    <Image Source="Pictures/Shop/Btn/PencilIcon.png" Stretch="UniformToFill"></Image>
+                                </StackPanel>
+                            </Button>
+                            <Button Width="50" Height="50" Style="{StaticResource ShopControlBtnStyle}" Canvas.Top="100" Canvas.Left="0">
+                                <StackPanel>
+                                    <Image Source="Pictures/Shop/Btn/Bin2Icon.png" Stretch="UniformToFill"></Image>
+                                </StackPanel>
+                            </Button>
+                            <Button Width="50" Height="50" Style="{StaticResource ShopControlBtnStyle}" Canvas.Bottom="0" Canvas.Left="0"></Button>
+                        </Canvas>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <ListBox x:Name="LB_ShopItems">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Tag="{Binding Id}" Orientation="Horizontal" MouseLeftButtonDown="StackPanel_MouseLeftButtonDown">
+                                        <Image Margin="0" Width="24" Height="24" Source="{Binding PictureURL}"></Image>
+                                        <Label Margin="0" Padding="10,5,0,0" FontSize="15" Content="{Binding ItemName}"></Label>
+                                        <Label Width="400" Padding="0" Height="30"></Label>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </Grid>
+                    <Grid Grid.Column="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="15*"></RowDefinition>
+                            <RowDefinition Height="2*"></RowDefinition>
+                            <RowDefinition Height="1*"></RowDefinition>
+                            <RowDefinition Height="4*"></RowDefinition>
+                            <RowDefinition Height="2*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0" Background="#FFE8E8E8">
+                            <Image Width="330" Height="330" Margin="5" x:Name="ShopImageBig" Stretch="UniformToFill"/>
+                        </Grid>
+                        <Grid Grid.Row="1">
+                            <Canvas>
+                                <Image Canvas.Top="8" Canvas.Left="8" Width="30" Height="30" Source="Pictures/Coin.png"></Image>
+                                <Image Canvas.Top="8" Canvas.Left="120" Width="30" Height="30" Source="Pictures/Diamond.png"></Image>
+                                <Label x:Name="label_GoldPrice" Canvas.Left="38" Canvas.Top="7" FontSize="15">0</Label>
+                                <Label x:Name="label_DiaPrice" Canvas.Left="150" Canvas.Top="7" FontSize="15">0</Label>
+                                <Label FontSize="15" Canvas.Right="1" Canvas.Top="7">in stock</Label>
+                                <Label x:Name="label_itemStock" FontSize="15" Canvas.Right="55" Canvas.Top="7">0</Label>
+                            </Canvas>
+                        </Grid>
+                        <Grid Grid.Row="2">
+                            <Button>Buy</Button>
+                        </Grid>
+                        <Grid Grid.Row="3">
+                            <Canvas>
+                                <Label>Describtion:</Label>
+                                <TextBlock x:Name="TB_ShopItemDescribtion" Width="320" Height="65" Canvas.Bottom="5" Canvas.Left="15" TextWrapping="Wrap"></TextBlock>
+                            </Canvas>
+                        </Grid>
+                    </Grid>
+                </Grid>
             </TabItem>
             <TabItem Header="Setting">
-                <Grid Background="White"/>
-            </TabItem>
-            <TabItem Header="Items setting">
                 <Grid Background="White"/>
             </TabItem>
         </TabControl>
