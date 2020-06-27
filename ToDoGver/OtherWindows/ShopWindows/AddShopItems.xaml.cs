@@ -50,25 +50,60 @@ namespace ToDoGver.OtherWindows.ShopWindows
             LoadImage();
         }
 
+        public string ItemName = "null";
+        public int ItemPriceG = 0;
+        public int ItemPriceD = 0;
+        public int ItemStock = 0;
+        public int HP_Recover = 0;
+        public int Mb_Recover = 0;
+        public string ItemDescribtion = "null";
+        public string PicLocation = "";
+
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            string ItemName = "null";
+            //string ItemName = "null";
+            //int ItemPriceG = 0;
+            //int ItemPriceD = 0;
+            //int ItemStock = 0;
+            //int HP_Recover = 0;
+            //int Mb_Recover = 0;
+            //string ItemDescribtion = "null";
+            //string PicLocation = "";
+            
             if (!TB_ItemName.Text.Contains(";"))
                 ItemName = TB_ItemName.Text;
-            int ItemPriceG = 0;
+            
             Int32.TryParse(TB_PriceGold.Text, out ItemPriceG);
-            int ItemPriceD = 0;
+            if(ItemPriceG >= 10000000)
+            {
+                ItemPriceG = 9999999;
+            }
             Int32.TryParse(TB_PriceDia.Text, out ItemPriceD);
-            int ItemStock = 0;
+            if (ItemPriceD >= 1000000)
+            {
+                ItemPriceD = 999999;
+            }
             Int32.TryParse(TB_ItemStock.Text, out ItemStock);
-            int HP_Recover = 0;
+            if (ItemStock >= 10000)
+            {
+                ItemStock = 9999;
+            }
+
             Int32.TryParse(TB_HpRecover.Text, out HP_Recover);
-            int Mb_Recover = 0;
+            if (HP_Recover >= 1000)
+            {
+                HP_Recover = 1000;
+            }
+
             Int32.TryParse(TB_MbRecover.Text, out Mb_Recover);
-            string ItemDescribtion = "null";
+            if (Mb_Recover >= 300)
+            {
+                Mb_Recover = 300;
+            }
+
             if (!TB_ItemDescribtion.Text.Contains(";"))
                 ItemDescribtion = TB_ItemDescribtion.Text;
-            string PicLocation = "";
+            
             PicLocation = ImageURLsplited;
             if (PicLocation.Equals("")) 
             {
@@ -85,13 +120,36 @@ namespace ToDoGver.OtherWindows.ShopWindows
                 MessageBox.Show("Select a picture");
                 return;
             }
-            Shop.AddProduct(ItemName,ItemPriceG,ItemPriceD,ItemStock,HP_Recover,Mb_Recover,ItemDescribtion,PicLocation);
-            this.Close();
+            //Shop.AddProduct(ItemName,ItemPriceG,ItemPriceD,ItemStock,HP_Recover,Mb_Recover,ItemDescribtion,PicLocation);
+            this.Hide();
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
 
+        }
+
+        public void clearTB()
+        {
+            TB_ItemName.Text = "";
+            TB_PriceGold.Text = "";
+            TB_PriceDia.Text = "";
+            TB_ItemStock.Text = "";
+            TB_ItemDescribtion.Text = "";
+            TB_HpRecover.Text = "";
+            TB_MbRecover.Text = "";
+        }
+
+        public void ClearData()
+        {
+            ItemName = "";
+            ItemPriceG = 0;
+            ItemPriceD = 0;
+            ItemStock = 0;
+            ItemDescribtion = "";
+            HP_Recover = 0;
+            Mb_Recover = 0;
+            PicLocation = "";
         }
     }
 }

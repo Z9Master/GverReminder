@@ -143,7 +143,7 @@
                                     <Image Source="Pictures/Shop/Btn/PencilIcon.png" Stretch="UniformToFill"></Image>
                                 </StackPanel>
                             </Button>
-                            <Button Width="50" Height="50" Style="{StaticResource ShopControlBtnStyle}" Canvas.Top="100" Canvas.Left="0">
+                            <Button Width="50" Height="50" Style="{StaticResource ShopControlBtnStyle}" Canvas.Top="100" Canvas.Left="0" Click="Button_Click_2">
                                 <StackPanel>
                                     <Image Source="Pictures/Shop/Btn/Bin2Icon.png" Stretch="UniformToFill"></Image>
                                 </StackPanel>
@@ -186,7 +186,7 @@
                             </Canvas>
                         </Grid>
                         <Grid Grid.Row="2">
-                            <Button>Buy</Button>
+                            <Button Click="Button_Click_1">Buy</Button>
                         </Grid>
                         <Grid Grid.Row="3">
                             <Canvas>

@@ -21,7 +21,7 @@ namespace ToDoGver.OtherClasses
 
         public Shop()
         {
-            LoadFile();
+            LoadFile();  
         }
 
         // Simple load data to ListShopItems from filePath, it separates
@@ -54,19 +54,34 @@ namespace ToDoGver.OtherClasses
             }
         }
 
+        //public string _productName;
+        //public int _prodPriceG;
+        //public int _prodPriceD;
+        //public int _prodStock;
+        //public int _prodHpRec;
+        //public int _prodMbRec;
+        //public string _ProdDescribtion;
+        //public string _URL;
+        //public void addData(string productName, int prodPriceG, int prodPriceD, int prodStock, int prodHpRec, int prodMbRec, string ProdDescribtion, string URL)
+        //{
+        //    _productName = productName;
+        //    _prodPriceG = prodPriceG;
+        //    _prodPriceD = prodPriceD;
+        //    _prodStock = prodStock;
+        //    _prodHpRec = prodHpRec;
+        //    _prodMbRec = prodMbRec;
+        //    _ProdDescribtion = ProdDescribtion;
+        //    _URL = URL;
+            
+        //}
+
         public void AddProduct(string productName, int prodPriceG, int prodPriceD, int prodStock, int prodHpRec, int prodMbRec, string ProdDescribtion, string URL)
         {
             List<string> output = new List<string>();
-            int[] arrayID = new int[99999];
-            foreach(var index in ListShopItems)
-            {
-                int i = 0;
-                arrayID[i] = index.Id;
-                i++;
-            }
+            int a = ListShopItems.Count();
             ListShopItems.Add(new ItemTranslater()
             {
-                Id = arrayID.Max() + 1,
+                Id = a,
                 ItemName = productName,
                 PriceGold = prodPriceG,
                 PriceDiamond = prodPriceD,
@@ -80,10 +95,21 @@ namespace ToDoGver.OtherClasses
             foreach (var item in ListShopItems)
             {
                 output.Add($"{item.Id};{item.ItemName};{item.PriceGold};{item.PriceDiamond};{item.ItemStock};{item.HpBonus};{item.MBbonus};{item.Describtion};{item.PictureURL}");
-                File.WriteAllLines(filePath, output);
             }
+            File.WriteAllLines(filePath, output);
+            
         }
 
+        public void RemoveShopItem(int id)
+        {
+            List<string> output = new List<string>();
+            ListShopItems.Remove(new ItemTranslater() { Id = id });
+            foreach(var item in ListShopItems)
+            {
+                output.Add($"{item.Id};{item.ItemName};{item.PriceGold};{item.PriceDiamond};{item.ItemStock};{item.HpBonus};{item.MBbonus};{item.Describtion};{item.PictureURL}");
+            }
+            File.WriteAllLines(filePath, output);
+        }
 
         #region Finder function
         // These methods can find data like url, price, etc. with id

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 using ToDoGver.OtherClasses;
 using ToDoGver.OtherWindows.EventsWindows;
 using ToDoGver.OtherWindows.ShopWindows;
@@ -35,6 +36,7 @@ namespace ToDoGver
         {
             InitializeComponent();
             loading_UserData();
+            TickTimerCreator();
         }
 
         #region Functions
@@ -150,12 +152,14 @@ namespace ToDoGver
         #endregion
 
         #region Shop events
+        int SP_tag_index = -1;
         private void StackPanel_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             StackPanel tagSpanel = sender as StackPanel;
             //MessageBox.Show(tagSpanel.Tag.ToString());
             int tag = Int32.Parse(tagSpanel.Tag.ToString());
             GetItemdatas(tag);
+            SP_tag_index = tag;
         }
         #endregion
 
@@ -174,10 +178,10 @@ namespace ToDoGver
         #endregion
 
         #endregion
-
+        AddShopItems ASI = new AddShopItems();
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            AddShopItems ASI = new AddShopItems();
+            
             ASI.Show();
         }
 
@@ -188,8 +192,61 @@ namespace ToDoGver
 
         public void ReloadShop()
         {
-            
             LB_ShopItems.Items.Refresh();
+        }
+
+        private void TickTimerCreator()
+        {
+            DispatcherTimer timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromSeconds(1);
+            timer.Tick += Timer_Tick;
+            timer.Start();
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            if(!ASI.ItemName.Equals("") && !ASI.PicLocation.Equals(""))
+            {
+                sp.AddProduct(ASI.ItemName, ASI.ItemPriceG, ASI.ItemPriceD, ASI.ItemStock, ASI.HP_Recover, ASI.Mb_Recover, ASI.ItemDescribtion, ASI.PicLocation);
+                ASI.clearTB();
+                ASI.ClearData();
+                ReloadShop();
+            }
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            //     string productName = sp._productName;
+            //int prodPriceG = sp._prodPriceG;
+            // int prodPriceD = sp._prodPriceD;
+            // int prodStock = sp._prodStock;
+            // int prodHpRec = sp._prodHpRec;
+            // int prodMbRec = sp._prodMbRec;
+            // string ProdDescribtion = sp._ProdDescribtion;
+            // string URL = sp._URL;
+           
+            //sp.AddProduct("a", 1, 1, 1, 1, 1, "desc", "E:/Download/pixel drawing/Bin2Icon.png");  
+            ReloadShop();
+        }
+        //
+        //
+        //
+        // PROBLEM IN ADD ID, IS NOT UNIQUE
+        // MESSAGE BOX FOR ASKING DELETE OR NOT
+
+        //
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            if(SP_tag_index >= 0)
+            {
+                sp.RemoveShopItem(SP_tag_index);
+                ReloadShop();
+            }
+            else
+            {
+                MessageBox.Show("Select item to remove");
+            }
         }
     }
 }

@@ -1,7 +1,3 @@
-0;item1;100;0;10;0;0;text;E:\Project\C#\GverReminder\ToDoGver\GverReminder\ToDoGver\Pictures\Shop\Items\HPLIcon.png
-1;item2;50;1;20;0;10;text 2;E:\Picture\Anime\All Random\959381.jpg
-2;Mana poition S;100;0;1000;0;100;Recover 100 mana = 100 mins of playing;E:/Project/C#/GverReminder/ToDoGver/GverReminder/ToDoGver/Pictures/Shop/Items/ManaSIcon.png
-3;item3;50;1;20;0;10;...;E:\Project\C#\GverReminder\ToDoGver\GverReminder\ToDoGver\Pictures\Shop\Items\HPSIcon.png
-4;sdfse;1;1;1;0;0;sdfse;E:/Download/pixel drawing/pixil-frame-0.png
-5;null;0;0;0;0;0;null;E:/Download/pixel drawing/Bin2Icon.png
-6;Picture;0;9;10;0;0;Picture;E:/Download/77307890_p0.png
+0;11;123;123;123;123;123;;E:/Download/pixel drawing/HPSIcon.png
+2;fghft;0;0;0;0;0;;E:/Picture/Anime/All Random/6BG235D.jpg
+3;fhftdh;0;0;0;0;0;;E:/Picture/Anime/All Random/6aa91d909887b3247181fa2c5aef101c--anime-school-girl-anime-girls.jpg
